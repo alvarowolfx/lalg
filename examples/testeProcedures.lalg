@@ -1,0 +1,43 @@
+program Fodao
+	
+	var x : real;
+	var a,b: integer;
+
+	procedure procA(b:integer ; c:integer)
+	var a : integer;
+	begin
+		a := b * c;
+		write(a)
+	end;
+
+	procedure procB(b:real;c:real)
+	var a : real;
+	begin
+		a := c + b;
+		write(a)
+	end;
+	
+
+begin
+	read(x);
+	write(x);
+	read(a);
+	write(a);
+	read(b);
+	write(b);
+	a := a + b;
+	a := (a + b)*(b + 1);
+	if a < b then 
+		write(b)
+	else
+		write(a)
+	$;
+
+	procA(a;b);
+	procB(x;x);
+
+	while a <= 10 do
+		a := a + 1;
+		write(a)
+	$
+end.
