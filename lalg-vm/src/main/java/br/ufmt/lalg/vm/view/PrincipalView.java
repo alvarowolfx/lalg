@@ -51,7 +51,7 @@ public class PrincipalView extends JXFrame{
 		scpExec.setPreferredSize(new Dimension(300,600));
 		
 		pnlCentral = new JXPanel(new MigLayout("align center"));
-		pnlExec = new JXTitledPanel(" Execu��o ",scpExec);
+		pnlExec = new JXTitledPanel(" Execução ",scpExec);
 		pnlCode = new JXTitledPanel(" Novo arquivo ",scpCode);
 		
 		pnlCentral.add(pnlCode,"dock center");
