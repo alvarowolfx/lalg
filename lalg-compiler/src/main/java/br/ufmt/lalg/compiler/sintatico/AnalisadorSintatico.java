@@ -99,7 +99,7 @@ public class AnalisadorSintatico {
 				gerador.fimPrograma();
 			}else{				
 				//Erro
-				throw new AnaliseSintaticaException("Corpo do programa n�o possui 'end'",tokenAtual);
+				throw new AnaliseSintaticaException("Corpo do programa não possui 'end'",tokenAtual);
 				
 			}
 						
@@ -179,7 +179,7 @@ public class AnalisadorSintatico {
 			
 		}else{			
 			//Erro
-			throw new AnaliseSintaticaException("Declara��o de variaveis de ser feita do tipo <variaveis> : <tipoDaVariavel>",tokenAtual);			
+			throw new AnaliseSintaticaException("Declaração de variaveis de ser feita do tipo <variaveis> : <tipoDaVariavel>",tokenAtual);
 		}
 				
 	}
@@ -194,7 +194,7 @@ public class AnalisadorSintatico {
 			
 		}else{			
 			//Erro
-			throw new AnaliseSintaticaException("Esperado identificador v�lido",tokenAtual);			
+			throw new AnaliseSintaticaException("Esperado identificador válido",tokenAtual);
 		}
 		
 		
@@ -229,7 +229,7 @@ public class AnalisadorSintatico {
 			
 		}else{
 			//Erro
-			throw new AnaliseSintaticaException("Esperado identificador v�lido para procedimento",tokenAtual);			
+			throw new AnaliseSintaticaException("Esperado identificador válido para procedimento",tokenAtual);
 		}
 		
 	}
@@ -835,7 +835,7 @@ public class AnalisadorSintatico {
 	
 	private void verificaExistenciaToken(boolean duvida) throws AnaliseSintaticaException {	
 		
-		//Uma vari�vel
+		//Uma variável
 		if(variaveisAtuais.size() == 0){
 			Simbolo s = null;
 			//Verifica no escopo atual		
@@ -984,7 +984,7 @@ public class AnalisadorSintatico {
 			}			
 			
 		}else{
-			throw new AnaliseSintaticaException("N�mero incorreto de parâmetros para a chamada de procedimento",pilhaDeExpressoes.peek().getToken());
+			throw new AnaliseSintaticaException("Número incorreto de parâmetros para a chamada de procedimento",pilhaDeExpressoes.peek().getToken());
 		}
 		
 		
