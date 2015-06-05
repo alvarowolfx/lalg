@@ -10,11 +10,11 @@ public class PilhaDeExpressao extends Stack<Simbolo> {
 	public boolean avaliarExpressaoComAtribuicao(){
 		
 		Collections.reverse(this);	
-		//Pega a vari�vel do lado esquerdo
+		//Pega a variável do lado esquerdo
 		Simbolo var = this.pop();
 		String tipo = var.getTipo();
 		
-		//Joga fora o simbolo de atribui��o
+		//Joga fora o simbolo de atribuição
 		this.pop();
 		
 		boolean eval = avaliarExpressaoComTipo(tipo);		
@@ -26,7 +26,7 @@ public class PilhaDeExpressao extends Stack<Simbolo> {
 	
 	public boolean avaliarExpressao(){
 		
-		//Pega a vari�vel do lado esquerdo
+		//Pega a variável do lado esquerdo
 		Simbolo var = this.peek();				
 		
 		//Retira parenteses ou -/+
@@ -59,13 +59,13 @@ public class PilhaDeExpressao extends Stack<Simbolo> {
 			Simbolo s = this.pop();
 			
 			if(s.getCategoria() == null && s.getToken().getTipo() != TipoToken.SIMBOLO){
-				//� um numero
+				//é um numero
 				if(!s.getTipo().contentEquals(tipo)){
 					tiposDiferentes = true;
 					break;
 				}								
 			}else if(s.getCategoria() == Categoria.VARIAVEL || s.getCategoria() == Categoria.PARAMETRO){
-				//Verificar se tem tipos iguais ao da vari�vel			
+				//Verificar se tem tipos iguais ao da variável
 				if(!s.getTipo().contentEquals(tipo)){
 					tiposDiferentes = true;
 					break;
@@ -80,7 +80,7 @@ public class PilhaDeExpressao extends Stack<Simbolo> {
 		
 	}
 
-	//Retira atribui��o, poe parenteses e inverte a pilha
+	//Retira atribuição, poe parenteses e inverte a pilha
 	//Usar depois
 	public Simbolo retirarAtribuicao(){
 		
@@ -101,7 +101,7 @@ public class PilhaDeExpressao extends Stack<Simbolo> {
 		Stack<Simbolo> aux = new Stack<Simbolo>();
 		aux.push(new Simbolo("(",null,new Token("(",TipoToken.SIMBOLO,0,0),"simbolo",null));			
 		
-		System.out.println(Arrays.toString(this.toArray()));
+		//System.out.println(Arrays.toString(this.toArray()));
 		while(!this.isEmpty()){
 			Simbolo s = this.pop();
 			String conteudo = s.getConteudo();
@@ -145,13 +145,13 @@ public class PilhaDeExpressao extends Stack<Simbolo> {
 				
 			}
 			
-			
+			/* DEBUG
 			System.out.println("Entrada");
 			System.out.println(Arrays.toString(this.toArray()));
 			
 			System.out.println("Saida");
 			System.out.println(Arrays.toString(posfixa.toArray()));
-			
+			*/
 		}
 		Collections.reverse(posfixa);
 		return posfixa;
